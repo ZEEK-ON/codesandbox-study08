@@ -5,6 +5,8 @@
 // import { UserCard } from "./components/organisms/user/UserCard";
 // import { DefaultLayout } from "./components/templates/DefaultLayout";
 // import { HeaderOnly } from "./components/templates/HeaderOnly";
+import { RecoilRoot } from "recoil";
+import { UserProvider } from "./providers/UserProvider";
 import { Router } from "./router/Router";
 import "./styles.css";
 
@@ -21,7 +23,11 @@ import "./styles.css";
 
 export default function App() {
   return (
-    <Router />
+    <RecoilRoot>
+      <UserProvider>
+        <Router />
+      </UserProvider>
+    </RecoilRoot>
     // <BrowserRouter>
     //   <DefaultLayout>
     //     <PrimaryButton>テスト</PrimaryButton>
